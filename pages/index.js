@@ -27,8 +27,11 @@ export async function getStaticProps() {
   return {
     props: {
       meetups: DUMMY_MEETUPS
-    }
+    },
+    revalidate: 1
   };
 }
+
+// revalidate : next.js 정적생성기능 관련 옵션, 페이지를 얼마나 자주 재생성하는지 지정하여 사용됩니다.
 
 export default HomePage;
