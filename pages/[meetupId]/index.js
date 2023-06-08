@@ -1,15 +1,26 @@
+import { Fragment } from 'react';
 import { MongoClient, ObjectId } from 'mongodb';
+import Head from 'next/head';
 
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
 function MeetupDetails(props) {
   return (
-    <MeetupDetail
-      image={props.meetupData.image}
-      title={props.meetupData.title}
-      address={props.meetupData.address}
-      description={props.meetupData.description}
-    />
+    <Fragment>
+      <Head>
+        <title>{props.meetupData.title}</title>
+        <meta
+          name="description"
+          content={props.meetupData.description}
+        />
+      </Head>
+      <MeetupDetail
+        image={props.meetupData.image}
+        title={props.meetupData.title}
+        address={props.meetupData.address}
+        description={props.meetupData.description}
+      />
+    </Fragment>
   );
 }
 // getStaticPaths : 정적 생성(static generation)을 사용하는 페이지에서 동적 경로를 생성하는 데 사용됩니다. 이 함수는 동적 경로의 목록을 반환하고, 각 경로에 대한 정적 페이지를 미리 생성합니다.
