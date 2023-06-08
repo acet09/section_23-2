@@ -14,7 +14,7 @@ function HomePage(props) {
           content='진짜 깡패새끼를 데리고 온줄 알았다니깐요...'
         />
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </Fragment>
   );
 }
